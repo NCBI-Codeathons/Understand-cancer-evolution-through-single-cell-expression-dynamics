@@ -1,10 +1,10 @@
 # Understand-cancer-evolution-through-single-cell-expression-dynamics
 
-Sehyun Oh (sehyun.oh@sph.cuny.edu) 
+Sehyun Oh (sehyun.oh@sph.cuny.edu)<br/>
 Ludwig Geistlinger (ludwig.geistlinger@sph.cuny.edu) 
 
-Department of Epidemiology and Biostatistics 
-CUNY School of Public Health 
+Department of Epidemiology and Biostatistics<br/>  
+CUNY School of Public Health<br/>
 New York, NY 10027 
 
 Question:
