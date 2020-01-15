@@ -33,6 +33,8 @@ Can we detect the direction of cancer evolution by analyzing the expression dyna
 
 - Functional Pseudotime analysis (https://broadinstitute.github.io/2019_scWorkshop/functional-pseudotime-analysis.html), originally from [the Hemberg lab course material](https://scrnaseq-course.cog.sanger.ac.uk/website/biological-analysis.html#pseudotime-analysis)
 
+- [A comparison of single-cell trajectory inference methods](https://www.nature.com/articles/s41587-019-0071-9)
+
 #### For codeathon
 1. [slingshot](https://bioconductor.org/packages/release/bioc/html/slingshot.html)
 2. [monocle3](https://cole-trapnell-lab.github.io/monocle3/)
