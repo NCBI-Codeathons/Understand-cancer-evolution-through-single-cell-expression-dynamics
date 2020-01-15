@@ -3,6 +3,8 @@
 Sehyun Oh (sehyun.oh@sph.cuny.edu) 
 <br/>
 Ludwig Geistlinger (ludwig.geistlinger@sph.cuny.edu) 
+<br/>
+Ola Oni (olo4002@med.cornell.edu)
 
 Department of Epidemiology and Biostatistics    
 CUNY School of Public Health   
