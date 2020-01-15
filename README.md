@@ -11,6 +11,7 @@ CUNY School of Public Health
 New York, NY 10027
 
 Nur-Taz Rahman (nur-taz.rahman@yale.edu)
+<br/>
 Simbonis Bioinformatics Fellow
 Cushing/Whitney Medical Library
 333 Cedar St, New Haven, CT 06511
