@@ -8,7 +8,12 @@ Ola Oni (olo4002@med.cornell.edu)
 
 Department of Epidemiology and Biostatistics    
 CUNY School of Public Health   
-New York, NY 10027 
+New York, NY 10027
+
+Nur-Taz Rahman (nur-taz.rahman@yale.edu)
+Simbonis Bioinformatics Fellow
+Cushing/Whitney Medical Library
+333 Cedar St, New Haven, CT 06511
 
 ## Question
 Can we detect the direction of cancer evolution by analyzing the expression dynamics? If cancer samples are a mixture of different cells (cancer subtypes and/or tissues of origin), can we infer the stage and/or origin of cells from their evolutionary trajectory?
