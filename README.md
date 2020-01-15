@@ -12,7 +12,11 @@ New York, NY 10027
 
 Nur-Taz Rahman (nur-taz.rahman@yale.edu)
 <br/>
-Simbonis Bioinformatics Fellow . Cushing/Whitney Medical Library . 333 Cedar St, New Haven, CT 06511
+Simbonis Bioinformatics Fellow
+<br>
+Cushing/Whitney Medical Library
+<br>
+333 Cedar St, New Haven, CT 06511
 
 Alejandro Jimenez-Sanchez (ajs.scientia@gmail.com)
 <br/>
