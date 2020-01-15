@@ -1,10 +1,8 @@
 # Understand cancer evolution through single cell expression dynamics
 
-Sehyun Oh (sehyun.oh@sph.cuny.edu) 
+Sehyun Oh (sehyun.oh@sph.cuny.edu)
 <br/>
-Ludwig Geistlinger (ludwig.geistlinger@sph.cuny.edu) 
-<br/>
-Ola Oni (olo4002@med.cornell.edu)
+Ludwig Geistlinger (ludwig.geistlinger@sph.cuny.edu)
 
 Department of Epidemiology and Biostatistics    
 CUNY School of Public Health   
@@ -25,6 +23,11 @@ The Dana Pe'er Lab
 Computational & Systems Biology Program
 Sloan Kettering Institute, NY
 New York
+
+Ola Oni (olo4002@med.cornell.edu)
+Tri-I PhD Program in Computational Biology and Medicine
+Weill Cornell Medicine
+New York, NY 10021
 
 ## Question
 Can we detect the direction of cancer evolution by analyzing the expression dynamics? If cancer samples are a mixture of different cells (cancer subtypes and/or tissues of origin), can we infer the stage and/or origin of cells from their evolutionary trajectory?
@@ -70,11 +73,10 @@ Can we detect the direction of cancer evolution by analyzing the expression dyna
 
 ## Misc.
 #### Other tools  
-Below are the examples of trajectory inference tools on cancer, with very poor documentation - not enough to reproduce. 
+Below are the examples of trajectory inference tools on cancer, with very poor documentation - not enough to reproduce.
 
 - Mapping lung cancer epithelial-mesenchymal transition states and trajectories with single-cell resolution
 (https://www.nature.com/articles/s41467-019-13441-6) --> TRACER
 
-- High Resolution Comparison of Cancer-Related Developmental Processes Using Trajectory Alignment 
+- High Resolution Comparison of Cancer-Related Developmental Processes Using Trajectory Alignment
 (https://www.biorxiv.org/content/10.1101/469601v1.full) --> devMap
-
