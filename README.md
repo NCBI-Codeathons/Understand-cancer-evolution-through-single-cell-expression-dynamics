@@ -16,13 +16,12 @@ Cushing/Whitney Medical Library
 <br>
 333 Cedar St, New Haven, CT 06511
 
-Alejandro Jimenez-Sanchez (ajs.scientia@gmail.com)
-<br/>
-Postdoctoral Research Fellow
-The Dana Pe'er Lab
-Computational & Systems Biology Program
-Sloan Kettering Institute, NY
-New York
+Alejandro Jimenez-Sanchez (ajs.scientia@gmail.com)<br/>
+Postdoctoral Research Fellow<br/>
+The Dana Pe'er Lab<br/>
+Computational & Systems Biology Program<br/>
+Sloan Kettering Institute, NY<br/>
+New York, NY 10065<br/>
 
 Ola Oni (olo4002@med.cornell.edu)
 <br/>
