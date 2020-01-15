@@ -13,8 +13,8 @@ New York, NY 10027
 Nur-Taz Rahman (nur-taz.rahman@yale.edu)
 <br/>
 Simbonis Bioinformatics Fellow
-Cushing/Whitney Medical Library
-333 Cedar St, New Haven, CT 06511
+/Cushing/Whitney Medical Library
+/333 Cedar St, New Haven, CT 06511
 
 ## Question
 Can we detect the direction of cancer evolution by analyzing the expression dynamics? If cancer samples are a mixture of different cells (cancer subtypes and/or tissues of origin), can we infer the stage and/or origin of cells from their evolutionary trajectory?
