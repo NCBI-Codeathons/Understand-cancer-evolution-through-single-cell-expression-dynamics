@@ -82,3 +82,7 @@ Below are the examples of trajectory inference tools on cancer, with very poor d
 
 - High Resolution Comparison of Cancer-Related Developmental Processes Using Trajectory Alignment
 (https://www.biorxiv.org/content/10.1101/469601v1.full) --> devMap
+
+## Lessons learned
+
+## Next steps
