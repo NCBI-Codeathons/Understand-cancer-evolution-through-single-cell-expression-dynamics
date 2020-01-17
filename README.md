@@ -2,7 +2,7 @@
 ## Team
 **Sehyun Oh** (sehyun.oh@sph.cuny.edu, Lead)
 <br/>
-**Ludwig Geistlinger **(ludwig.geistlinger@sph.cuny.edu)
+**Ludwig Geistlinger** (ludwig.geistlinger@sph.cuny.edu)
 
 Department of Epidemiology and Biostatistics    
 CUNY School of Public Health   
@@ -32,7 +32,7 @@ Weill Cornell Medicine
 New York, NY 10021
 
 ## Question
-Can we understand cancer stage using SC trajectory inference tools?
+Can we understand cancer stage using single-cell trajectory inference tools?
 
 ## Deliverables
 - **Benchmark summary**: apply trajectory inference tools on different single-cell cancer samples    
