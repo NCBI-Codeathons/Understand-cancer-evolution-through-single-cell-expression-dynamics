@@ -133,13 +133,13 @@ head(pt)
 
 ### Obtain GSE103322
 
-```{r, eval = FALSE}
+```{r}
 gse <- read.delim("../datasets/GSE103322_HNSCC_all_data.txt.gz", as.is = TRUE, row.names = 1L)
 rownames(gse) <- gsub("\'", "", rownames(gse))
 ```
 
 Store in a `SingleCellExperiment`:
-```{r, eval=FALSE} 
+```{r} 
 coldat <- DataFrame(t(gse[1:5,]))
 coldat
 for(i in 1:4) coldat[,i] <- as.logical(as.integer(coldat[,i]))
@@ -149,14 +149,14 @@ sce
 ```
 
 Information about tumors
-```{r, eval=FALSE}
+```{r}
 gse.info <- getGEO("GSE103322")[[1]]
 gse.info <- as(gse.info, "SummarizedExperiment")
 head(colData(gse.info)[,11])
 ```
 
 Annotate tumor site:
-```{r, eval=FALSE}
+```{r}
 sce <- sce[,as.character(colData(gse.info)[,1])]
 colData(sce)$tumor_site <- sub("^tumor site: ", "", as.character(colData(gse.info)[,11]))
 table(colData(sce)$tumor_site)

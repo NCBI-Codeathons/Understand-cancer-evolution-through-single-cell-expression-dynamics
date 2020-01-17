@@ -378,19 +378,90 @@ cds &lt;-<span class="st"> </span><span class="kw">learn_graph</span>(cds)</code
 <span class="kw">rownames</span>(gse) &lt;-<span class="st"> </span><span class="kw">gsub</span>(<span class="st">&quot;</span><span class="ch">\'</span><span class="st">&quot;</span>, <span class="st">&quot;&quot;</span>, <span class="kw">rownames</span>(gse))</code></pre></div>
 <p>Store in a <code>SingleCellExperiment</code>:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">coldat &lt;-<span class="st"> </span><span class="kw">DataFrame</span>(<span class="kw">t</span>(gse[<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>,]))
-coldat
-<span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">4</span>) coldat[,i] &lt;-<span class="st"> </span><span class="kw">as.logical</span>(<span class="kw">as.integer</span>(coldat[,i]))
+coldat</code></pre></div>
+<pre><code>## DataFrame with 5902 rows and 5 columns
+##                           processed.by.Maxima.enzyme  Lymph.node
+##                                          &lt;character&gt; &lt;character&gt;
+## HN28_P15_D06_S330_comb                             1           1
+## HN28_P6_G05_S173_comb                              1           0
+## HN26_P14_D11_S239_comb                             1           1
+## HN26_P14_H05_S281_comb                             1           1
+## HN26_P25_H09_S189_comb                             1           1
+## ...                                              ...         ...
+## HNSCC17_P4_G12_S180_comb                           0           0
+## HNSCC20_P13_C05_S221_comb                          0           1
+## HNSCC17_P4_C12_S132_comb                           0           0
+## HNSCC20_P3_H08_S92_comb                            0           0
+## HNSCC20_P3_G06_S78_comb                            0           0
+##                           classified..as.cancer.cell
+##                                          &lt;character&gt;
+## HN28_P15_D06_S330_comb                             0
+## HN28_P6_G05_S173_comb                              0
+## HN26_P14_D11_S239_comb                             1
+## HN26_P14_H05_S281_comb                             0
+## HN26_P25_H09_S189_comb                             1
+## ...                                              ...
+## HNSCC17_P4_G12_S180_comb                           0
+## HNSCC20_P13_C05_S221_comb                          1
+## HNSCC17_P4_C12_S132_comb                           1
+## HNSCC20_P3_H08_S92_comb                            1
+## HNSCC20_P3_G06_S78_comb                            1
+##                           classified.as.non.cancer.cells non.cancer.cell.type
+##                                              &lt;character&gt;          &lt;character&gt;
+## HN28_P15_D06_S330_comb                                 1           Fibroblast
+## HN28_P6_G05_S173_comb                                  1           Fibroblast
+## HN26_P14_D11_S239_comb                                 0                    0
+## HN26_P14_H05_S281_comb                                 1           Fibroblast
+## HN26_P25_H09_S189_comb                                 0                    0
+## ...                                                  ...                  ...
+## HNSCC17_P4_G12_S180_comb                               0                    0
+## HNSCC20_P13_C05_S221_comb                              0                    0
+## HNSCC17_P4_C12_S132_comb                               0                    0
+## HNSCC20_P3_H08_S92_comb                                0                    0
+## HNSCC20_P3_G06_S78_comb                                0                    0</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">4</span>) coldat[,i] &lt;-<span class="st"> </span><span class="kw">as.logical</span>(<span class="kw">as.integer</span>(coldat[,i]))
 sce &lt;-<span class="st"> </span><span class="kw">SingleCellExperiment</span>(<span class="dt">assays =</span> <span class="kw">list</span>(<span class="dt">TPM =</span> gse[<span class="dv">6</span><span class="op">:</span><span class="kw">nrow</span>(gse),]),
                             <span class="dt">colData =</span> coldat)
 sce</code></pre></div>
+<pre><code>## class: SingleCellExperiment 
+## dim: 23686 5902 
+## metadata(0):
+## assays(1): TPM
+## rownames(23686): C9orf152 RPS11 ... CTSC AQP7
+## rowData names(0):
+## colnames(5902): HN28_P15_D06_S330_comb HN28_P6_G05_S173_comb ...
+##   HNSCC20_P3_H08_S92_comb HNSCC20_P3_G06_S78_comb
+## colData names(5): processed.by.Maxima.enzyme Lymph.node
+##   classified..as.cancer.cell classified.as.non.cancer.cells
+##   non.cancer.cell.type
+## reducedDimNames(0):
+## spikeNames(0):
+## altExpNames(0):</code></pre>
 <p>Information about tumors</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">gse.info &lt;-<span class="st"> </span><span class="kw">getGEO</span>(<span class="st">&quot;GSE103322&quot;</span>)[[<span class="dv">1</span>]]
-gse.info &lt;-<span class="st"> </span><span class="kw">as</span>(gse.info, <span class="st">&quot;SummarizedExperiment&quot;</span>)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">gse.info &lt;-<span class="st"> </span><span class="kw">getGEO</span>(<span class="st">&quot;GSE103322&quot;</span>)[[<span class="dv">1</span>]]</code></pre></div>
+<pre><code>## Found 1 file(s)</code></pre>
+<pre><code>## GSE103322_series_matrix.txt.gz</code></pre>
+<pre><code>## Using locally cached version: /var/folders/ch/b_7cgfws0p72r_bln49b1nm40000gn/T//Rtmp4T7DGL/GSE103322_series_matrix.txt.gz</code></pre>
+<pre><code>## Parsed with column specification:
+## cols(
+##   .default = col_character()
+## )</code></pre>
+<pre><code>## See spec(...) for full column specifications.</code></pre>
+<pre><code>## Using locally cached version of GPL18573 found here:
+## /var/folders/ch/b_7cgfws0p72r_bln49b1nm40000gn/T//Rtmp4T7DGL/GPL18573.soft</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">gse.info &lt;-<span class="st"> </span><span class="kw">as</span>(gse.info, <span class="st">&quot;SummarizedExperiment&quot;</span>)
 <span class="kw">head</span>(<span class="kw">colData</span>(gse.info)[,<span class="dv">11</span>])</code></pre></div>
+<pre><code>## [1] tumor site: Lymph node            tumor site: Primary (oral cavity)
+## [3] tumor site: Lymph node            tumor site: Lymph node           
+## [5] tumor site: Lymph node            tumor site: Lymph node           
+## Levels: tumor site: Lymph node tumor site: Primary (oral cavity)</code></pre>
 <p>Annotate tumor site:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">sce &lt;-<span class="st"> </span>sce[,<span class="kw">as.character</span>(<span class="kw">colData</span>(gse.info)[,<span class="dv">1</span>])]
 <span class="kw">colData</span>(sce)<span class="op">$</span>tumor_site &lt;-<span class="st"> </span><span class="kw">sub</span>(<span class="st">&quot;^tumor site: &quot;</span>, <span class="st">&quot;&quot;</span>, <span class="kw">as.character</span>(<span class="kw">colData</span>(gse.info)[,<span class="dv">11</span>]))
 <span class="kw">table</span>(<span class="kw">colData</span>(sce)<span class="op">$</span>tumor_site)</code></pre></div>
+<pre><code>## 
+##            Lymph node Primary (oral cavity) 
+##                  1361                  4540</code></pre>
 </div>
 <div id="cell-type-annotation-1" class="section level3">
 <h3>Cell type annotation</h3>
