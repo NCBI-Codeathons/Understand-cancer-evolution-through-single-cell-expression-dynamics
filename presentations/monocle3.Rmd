@@ -1,0 +1,58 @@
+---
+output:
+  rmarkdown::html_document:
+    highlight: pygments
+    toc: false
+    toc_depth: 3
+    fig_width: 5
+vignette: >
+  %\VignetteIndexEntry{monocle3}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding[utf8]{inputenc}  
+---
+
+# Application of Monocle3 (beta) to cancer scRNA-seq datasets
+
+```{r, message = FALSE}
+library(GEOquery)
+library(SingleCellExperiment)
+library(monocle3) # https://cole-trapnell-lab.github.io/monocle3/
+```
+
+## Obtain GSE118828 (ovarian cancer scRNA-seq dataset) 
+
+Download [GSE118828_RAW.tar](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE118828)
+from [GEO](https://www.ncbi.nlm.nih.gov/geo/) and `untar -xvf GSE118828_RAW.tar`.
+
+```{r}
+untar("../datasets/GSE118828_RAW.tar")
+gsm.files <- list.files(".", pattern = "^GSM")
+```
+
+Helper function that reads a GSM file and returns a `SingleCellExperiment`.
+```{r} 
+readGSM <- function(gsm.file)
+{
+    gsm <- read.csv(gsm.file, as.is = TRUE, row.names = 1L)
+    gsm <- t(gsm)
+    SingleCellExperiment(assays = list(counts = gsm))    
+}
+```
+
+Store scRNA-seq data for individual tumors as a `SingleCellExperiment`:
+```{r}
+sces <- lapply(gsm.files[5:6], readGSM)
+for(f in gsm.files) file.remove(f)
+names(sces) <- vapply(gsm.files[5:6], 
+                        function(n) unlist(strsplit(n, "_"))[[1]], 
+                        character(1))
+sces[[1]]
+```
+
+Information about the individual tumors:
+```{r}
+gse <- getGEO("GSE118828")[[1]]
+gse <- as(gse, "SummarizedExperiment")
+colData(gse)[,10:12]
+```
+
