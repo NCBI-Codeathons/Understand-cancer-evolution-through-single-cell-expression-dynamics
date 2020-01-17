@@ -1,0 +1,116 @@
+---
+title: "Benchmark TI Tools on Cancer Single Cell Data"
+author: "Sehyun Oh"
+date: "`r Sys.Date()`"
+output:
+  BiocStyle::html_document:
+    toc: true
+    toc_float: true
+    toc_depth: 4
+vignette: >
+  % \VignetteIndexEntry{Statistical analysis output}
+  % \VignetteEngine{knitr::rmarkdown}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Load cell type information
+```{r}
+cellType = read.table("/home/ludwig.geistlinger/data/GSM3348307_GSM3348308_barcode2celltype.tsv",
+                      sep = "\t", header = TRUE)
+
+head(cellType)
+```
+
+# Topology
+## monocle3
+```{r}
+
+```
+
+## slingshot
+
+```{r}
+slingshot_both <- readRDS("~/Understand-cancer-evolution-through-single-cell-expression-dynamics/presentations/examples/pseudotime_combined_5and6.rds")
+```
+
+```{r}
+head(colData(slingshot_both))
+```
+
+Column description:   
+- GMM: 
+- kmeans: clusters from slingshot (un-supervised)
+- slingPseudotime_1: 
+- slingPseudotime_2:
+
+
+```{r}
+slingshot_tumor <- readRDS("~/Understand-cancer-evolution-through-single-cell-expression-dynamics/presentations/examples/pseudotime_tumor_6.rds")
+```
+
+## Plantir
+## PAGA
+
+# Pseudotime
+We compared the pseudotime of each cell from different tools.
+```{r figure_style}
+customPlot = list(
+  theme_light(),
+  theme(plot.title = element_text(size = 14, 
+                                  face = "bold", 
+                                  margin = margin(10, 0, 10, 0)),
+        axis.text.x = element_text(size = 10, face = "bold"), 
+        axis.text.y = element_text(size = 10, face = "bold"), 
+        axis.title.x = element_text(size = 12, face = "bold"), 
+        axis.title.y = element_text(size = 12, face = "bold"),
+        axis.line = element_line(colour = "black", size = 0.5),
+        panel.grid.major = element_line(), 
+        panel.grid.minor = element_line(),
+        legend.title = element_text(size = 12, face = "bold"),
+        legend.text = element_text(size = 10, face = "bold"),
+        # plot.margin = unit(c(0.5,0.9,0.3,0.7), "cm"))
+        plot.margin = unit(c(0.5,0.5,0.5,0.5), "cm"))
+)
+```
+
+
+```{r}
+# figure styling
+source("~/data2/PureCN_manuscript/Figures/manuscript_figure_style.R")
+
+if (plot_for == "purity") {
+  customPlot = c(customPlot, 
+                 scale_x_continuous(limits = c(0, 1), breaks = seq(0,1,0.2)),
+                 scale_y_continuous(limits = c(0, 1), breaks = seq(0,1,0.2)))
+} else if (plot_for == "ploidy") {
+  customPlot = c(customPlot,
+                 scale_x_continuous(limits = c(0, 7), breaks = seq(0,7,1)),
+                 scale_y_continuous(limits = c(0, 7), breaks = seq(0,7,1)))  
+} else {
+  customPlot = customPlot
+}
+
+# plotting
+res_plot = ggplot(df) +
+  geom_point(aes(x = df[,x], y = df[,y]),
+             col = "black",
+             alpha = 1/3) + 
+  customLabs +
+  geom_abline(col = "grey", lwd = 0.5) + 
+  customPlot
+
+# add concordance
+cor = round(cor(df[,x], df[,y], use = "complete.obs"), 2)
+final_plot = ggdraw(add_sub(res_plot, paste("Concordance\ncorrelation =", cor), 
+                          vpadding = grid::unit(0, "lines"),
+                          y = 11, x = 0.05,
+                          hjust = 0, 
+                          fontface = "italic",
+                          size = 12))
+
+# print(final_plot)
+```
+
