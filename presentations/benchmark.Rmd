@@ -49,6 +49,7 @@ Column description:
 
 ```{r}
 slingshot_tumor <- readRDS("~/Understand-cancer-evolution-through-single-cell-expression-dynamics/presentations/examples/pseudotime_tumor_6.rds")
+slingshot_normal <- readRDS("~/Understand-cancer-evolution-through-single-cell-expression-dynamics/presentations/examples/pseudotime_tumor_6.rds")
 ```
 
 ## Plantir

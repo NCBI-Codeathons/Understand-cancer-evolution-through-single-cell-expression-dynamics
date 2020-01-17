@@ -3,7 +3,7 @@
 **Sehyun Oh** (sehyun.oh@sph.cuny.edu, Lead)
 <br/>
 **Ludwig Geistlinger** (ludwig.geistlinger@sph.cuny.edu)
-
+<br/>
 Department of Epidemiology and Biostatistics    
 CUNY School of Public Health   
 New York, NY 10027
@@ -35,12 +35,12 @@ New York, NY 10021
 Can we understand cancer stage using single-cell trajectory inference tools?
 
 ## Deliverables
-- **Benchmark summary**: apply trajectory inference tools on different single-cell cancer samples    
-- **Analysis workflows**    
-- **Proposal on tool updates** (e.g. what is the biological difference between differentiating cells and cancer cells need to be considered)
+1. **Benchmark summary**: apply trajectory inference tools on different single-cell cancer samples    
+2. **Analysis workflows**    
+3. **Proposal on tool updates** (e.g. what is the biological difference between differentiating cells and cancer cells need to be considered)
 
 ## Datasets
-R and Pyhton scripts for downloading these datasets are available under `datasets` folder.   
+R and Pyhton scripts for downloading these datasets are available under `/datasets` folder.   
 
 1. _**[tissue of origin]**_ Identification of grade and origin specific cell populations in serous epithelial ovarian cancer by single cell RNA-seq
 (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE118828) [[GSE118828](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE118828)]
@@ -55,7 +55,6 @@ R and Pyhton scripts for downloading these datasets are available under `dataset
 - [Plantir](https://github.com/dpeerlab/Palantir)
 - [PAGA](https://github.com/theislab/paga)
 - [dyno](https://dynverse.org/)
-
 
 ## Lessons learned
 
