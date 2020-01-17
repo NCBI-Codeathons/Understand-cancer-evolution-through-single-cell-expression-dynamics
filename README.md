@@ -56,9 +56,18 @@ R and Pyhton scripts for downloading these datasets are available under `/datase
 - [PAGA](https://github.com/theislab/paga)
 - [dyno](https://dynverse.org/)
 
+
+## Evaluation
+Later stage of cancer tend to show higher genetic instability (e.g. higher CNV in
+ovarian cancer), so we investigated how pseudotime is correlated with the level of 
+genomic instability, measure by the standard deviation of CNV. 
+
 ## Lessons learned
 
 ## Next steps
+- Expand to the rest of the datasets + more
+- Additional evaluation measures (e.g. Stability of the predictions after subsampling the datasets: The average pairwise similarity between models inferred across multiple runs (on the random subset of the same data) of the same method)
+
 
 
 ## Misc.
