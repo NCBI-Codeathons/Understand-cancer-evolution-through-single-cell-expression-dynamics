@@ -1,14 +1,14 @@
 # Understand cancer evolution through single cell expression dynamics
-
-Sehyun Oh (sehyun.oh@sph.cuny.edu)
+## Team
+**Sehyun Oh** (sehyun.oh@sph.cuny.edu, Lead)
 <br/>
-Ludwig Geistlinger (ludwig.geistlinger@sph.cuny.edu)
+**Ludwig Geistlinger** (ludwig.geistlinger@sph.cuny.edu)
 
 Department of Epidemiology and Biostatistics    
 CUNY School of Public Health   
 New York, NY 10027
 
-Nur-Taz Rahman (nur-taz.rahman@yale.edu)
+**Nur-Taz Rahman** (nur-taz.rahman@yale.edu)
 <br/>
 Simbonis Bioinformatics Fellow
 <br>
@@ -16,14 +16,14 @@ Cushing/Whitney Medical Library
 <br>
 333 Cedar St, New Haven, CT 06511
 
-Alejandro Jimenez-Sanchez (ajs.scientia@gmail.com)<br/>
+**Alejandro Jimenez-Sanchez** (ajs.scientia@gmail.com)<br/>
 Postdoctoral Research Fellow<br/>
 The Dana Pe'er Lab<br/>
 Computational & Systems Biology Program<br/>
 Sloan Kettering Institute, NY<br/>
 New York, NY 10065<br/>
 
-Ola Oni (olo4002@med.cornell.edu)
+**Ola Oni** (olo4002@med.cornell.edu)
 <br/>
 Tri-I PhD Program in Computational Biology and Medicine
 <br/>
@@ -32,23 +32,37 @@ Weill Cornell Medicine
 New York, NY 10021
 
 ## Question
-Can we detect the direction of cancer evolution by analyzing the expression dynamics? If cancer samples are a mixture of different cells (cancer subtypes and/or tissues of origin), can we infer the stage and/or origin of cells from their evolutionary trajectory?
+Can we understand cancer stage using single-cell trajectory inference tools?
 
+## Deliverables
+- **Benchmark summary**: apply trajectory inference tools on different single-cell cancer samples    
+- **Analysis workflows**    
+- **Proposal on tool updates** (e.g. what is the biological difference between differentiating cells and cancer cells need to be considered)
 
-## Approach
-#### Tasks
-- Cell type identification    
-- Known cancer subtypes or tissues of origin   
-- Identification of subclonal cell populations: using mutations in RNA-seq data rather than just gene expression?     
-- Evolutionary order of subclones and observation of EMT by trajectory analysis   
-- Study a priori markers of metastatic potential and whether they are early or late events   
+## Datasets
+R and Pyhton scripts for downloading these datasets are available under `datasets` folder.   
 
-#### Deliverable
-- Analysis workflows for each steps → make it reusable for new datasets
-- Compare trajectory inference tools on different cancer samples → Benchmark summary
+1. _**[tissue of origin]**_ Identification of grade and origin specific cell populations in serous epithelial ovarian cancer by single cell RNA-seq
+(https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE118828) [[GSE118828](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE118828)]
+
+2. _**[primary vs. metastasis]**_ Single-Cell Transcriptomic Analysis of Primary and Metastatic Tumor Ecosystems in Head and Neck Cancer
+(https://www.cell.com/cell/fulltext/S0092-8674(17)31270-9?cid=tw%26p) [[GSE103322](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE103322)]
 
 
 ## Tools
+- [slingshot](https://bioconductor.org/packages/release/bioc/html/slingshot.html)
+- [monocle3](https://cole-trapnell-lab.github.io/monocle3/)
+- [Plantir](https://github.com/dpeerlab/Palantir)
+- [PAGA](https://github.com/theislab/paga)
+- [dyno](https://dynverse.org/)
+
+
+## Lessons learned
+
+## Next steps
+
+
+## Misc.
 #### Background
 - [Psudotime Cell Trajectories](https://docs.google.com/presentation/d/e/2PACX-1vQuzaq2kbvEEc3mrUwILcCHuovrKKZWU45EQVEzWISgRVgl3A5KYR1FuY1cS2w0DHG-0wO19zGtvaNj/embed?start=false&loop=false&delayms=3000&slide=id.p) (a part of Broad Institute workshop material)
 
@@ -58,22 +72,6 @@ Can we detect the direction of cancer evolution by analyzing the expression dyna
 
 - [A comparison of single-cell trajectory inference methods](https://www.nature.com/articles/s41587-019-0071-9)
 
-#### For codeathon
-1. [slingshot](https://bioconductor.org/packages/release/bioc/html/slingshot.html)
-2. [monocle3](https://cole-trapnell-lab.github.io/monocle3/)
-
-## Datasets
-1. _**[tissue of origin]**_ Identification of grade and origin specific cell populations in serous epithelial ovarian cancer by single cell RNA-seq
-(https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE118828) [[GSE118828](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE118828)]
-
-2. _**[primary vs. metastasis]**_ Single-Cell Transcriptomic Analysis of Primary and Metastatic Tumor Ecosystems in Head and Neck Cancer
-(https://www.cell.com/cell/fulltext/S0092-8674(17)31270-9?cid=tw%26p) [[GSE103322](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE103322)]
-
-3. _**[longitudinal]**_ Longitudinal single-cell RNA sequencing of patient-derived primary cells reveals drug-induced infidelity in stem cell hierarchy
-(https://www.nature.com/articles/s41467-018-07261-3) [[GSE117872](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE117872)]
-
-
-## Misc.
 #### Other tools  
 Below are the examples of trajectory inference tools on cancer, with very poor documentation - not enough to reproduce.
 
@@ -82,7 +80,3 @@ Below are the examples of trajectory inference tools on cancer, with very poor d
 
 - High Resolution Comparison of Cancer-Related Developmental Processes Using Trajectory Alignment
 (https://www.biorxiv.org/content/10.1101/469601v1.full) --> devMap
-
-## Lessons learned
-
-## Next steps

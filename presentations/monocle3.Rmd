@@ -16,10 +16,13 @@ vignette: >
 ```{r, message = FALSE}
 library(GEOquery)
 library(SingleCellExperiment)
+library(SingleR)
 library(monocle3) # https://cole-trapnell-lab.github.io/monocle3/
 ```
 
-## Obtain GSE118828 (ovarian cancer scRNA-seq dataset) 
+## GSE118828 (ovarian cancer scRNA-seq dataset)
+
+### Obtain GSE118828
 
 Download [GSE118828_RAW.tar](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE118828)
 from [GEO](https://www.ncbi.nlm.nih.gov/geo/) and `untar -xvf GSE118828_RAW.tar`.
@@ -56,3 +59,44 @@ gse <- as(gse, "SummarizedExperiment")
 colData(gse)[,10:12]
 ```
 
+### Cell type annotation
+
+### Trajectory inference
+
+## GSE103322 (head and neck cancer scRNA-seq dataset)
+
+### Obtain GSE103322
+
+```{r}
+gse <- read.delim("../datasets/GSE103322_HNSCC_all_data.txt.gz", as.is = TRUE, row.names = 1L)
+rownames(gse) <- gsub("\'", "", rownames(gse))
+```
+
+Store in a `SingleCellExperiment`:
+```{r} 
+coldat <- DataFrame(t(gse[1:5,]))
+coldat
+for(i in 1:4) coldat[,i] <- as.logical(as.integer(coldat[,i]))
+sce <- SingleCellExperiment(assays = list(TPM = gse[6:nrow(gse),]),
+                            colData = coldat)
+sce
+```
+
+Information about tumors
+```{r}
+gse.info <- getGEO("GSE103322")[[1]]
+gse.info <- as(gse.info, "SummarizedExperiment")
+head(colData(gse.info)[,11])
+```
+
+Annotate tumor site:
+```{r}
+sce <- sce[,as.character(colData(gse.info)[,1])]
+colData(sce)$tumor_site <- sub("^tumor site: ", "", as.character(colData(gse.info)[,11]))
+table(colData(sce)$tumor_site)
+```
+
+### Cell type annotation
+
+
+### Trajectory inference
