@@ -1,14 +1,14 @@
 # Understand cancer evolution through single cell expression dynamics
 ## Team
-Sehyun Oh (sehyun.oh@sph.cuny.edu, Lead)
+**Sehyun Oh** (sehyun.oh@sph.cuny.edu, Lead)
 <br/>
-Ludwig Geistlinger (ludwig.geistlinger@sph.cuny.edu)
+**Ludwig Geistlinger **(ludwig.geistlinger@sph.cuny.edu)
 
 Department of Epidemiology and Biostatistics    
 CUNY School of Public Health   
 New York, NY 10027
 
-Nur-Taz Rahman (nur-taz.rahman@yale.edu)
+**Nur-Taz Rahman** (nur-taz.rahman@yale.edu)
 <br/>
 Simbonis Bioinformatics Fellow
 <br>
@@ -16,14 +16,14 @@ Cushing/Whitney Medical Library
 <br>
 333 Cedar St, New Haven, CT 06511
 
-Alejandro Jimenez-Sanchez (ajs.scientia@gmail.com)<br/>
+**Alejandro Jimenez-Sanchez** (ajs.scientia@gmail.com)<br/>
 Postdoctoral Research Fellow<br/>
 The Dana Pe'er Lab<br/>
 Computational & Systems Biology Program<br/>
 Sloan Kettering Institute, NY<br/>
 New York, NY 10065<br/>
 
-Ola Oni (olo4002@med.cornell.edu)
+**Ola Oni** (olo4002@med.cornell.edu)
 <br/>
 Tri-I PhD Program in Computational Biology and Medicine
 <br/>
@@ -50,15 +50,10 @@ R and Pyhton scripts for downloading these datasets are available under `dataset
 
 
 ## Tools
-### R
 - [slingshot](https://bioconductor.org/packages/release/bioc/html/slingshot.html)
 - [monocle3](https://cole-trapnell-lab.github.io/monocle3/)
-
-### Python
 - [Plantir](https://github.com/dpeerlab/Palantir)
 - [PAGA](https://github.com/theislab/paga)
-
-### Reference for benchmark
 - [dyno](https://dynverse.org/)
 
 
